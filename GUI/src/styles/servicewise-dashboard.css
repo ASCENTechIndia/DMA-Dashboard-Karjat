@@ -1,0 +1,540 @@
+/* ==========================================================================
+   ServiceWise Dashboard Styles
+   Matches approved UI design from the reference screenshot.
+   ========================================================================== */
+
+.sw-dashboard {
+  background: #f1f4f9;
+  min-height: 100vh;
+  padding: 20px 24px;
+  font-family: "Poppins", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+}
+
+/* ── 1. Top Brand Navbar Card ───────────────────────────────────────────── */
+.sw-top-brand-bar {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+}
+
+.sw-brand-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sw-brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.sw-service-icon-box {
+  width: 40px;
+  height: 40px;
+  background: #ede9fe;
+  color: #7c3aed;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sw-brand-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.sw-brand-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.sw-brand-subtitle {
+  font-size: 12.5px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.sw-brand-right {
+  display: flex;
+  align-items: center;
+}
+
+.sw-last-updated-badge {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ── 2. Sub-Header Navigation (< Back | Current Status Overview | All Months) */
+.sw-sub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.sw-sub-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sw-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease;
+}
+
+.sw-back-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #6366f1;
+}
+
+.sw-header-divider {
+  color: #6366f1;
+  font-weight: 700;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.sw-sub-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #5b54d6;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.sw-sub-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.sw-month-select-wrap {
+  position: relative;
+}
+
+.sw-month-select {
+  appearance: none;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 7px 36px 7px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.sw-month-select:hover,
+.sw-month-select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.sw-select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #64748b;
+}
+
+/* ── 3. 4 Top KPI Summary Cards ─────────────────────────────────────────── */
+.sw-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.sw-kpi-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.sw-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.sw-kpi-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sw-kpi-card--blue .sw-kpi-icon-wrap {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.sw-kpi-card--green .sw-kpi-icon-wrap {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+.sw-kpi-card--orange .sw-kpi-icon-wrap {
+  background: #fff7ed;
+  color: #f97316;
+}
+
+.sw-kpi-card--purple .sw-kpi-icon-wrap {
+  background: #f5f3ff;
+  color: #8b5cf6;
+}
+
+.sw-kpi-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sw-kpi-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.sw-kpi-card--blue .sw-kpi-label {
+  color: #2563eb;
+}
+
+.sw-kpi-card--green .sw-kpi-label {
+  color: #10b981;
+}
+
+.sw-kpi-card--orange .sw-kpi-label {
+  color: #f97316;
+}
+
+.sw-kpi-card--purple .sw-kpi-label {
+  color: #8b5cf6;
+}
+
+.sw-kpi-value {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 2px;
+}
+
+.sw-kpi-card--blue .sw-kpi-value {
+  color: #2563eb;
+}
+
+.sw-kpi-card--green .sw-kpi-value {
+  color: #10b981;
+}
+
+.sw-kpi-card--orange .sw-kpi-value {
+  color: #f97316;
+}
+
+.sw-kpi-card--purple .sw-kpi-value {
+  color: #8b5cf6;
+}
+
+.sw-kpi-subtext {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ── 4. Main 2-Column Grid (Table + Chart) ───────────────────────────────── */
+.sw-main-grid {
+  display: grid;
+  grid-template-columns: 48% 52%;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.sw-panel {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.sw-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.sw-panel-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sw-panel-icon {
+  color: #334155;
+  display: flex;
+  align-items: center;
+}
+
+.sw-panel-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.sw-pill-badge {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* ── Chart Mode Toggle Buttons ─────────────────────────────────────────── */
+.sw-chart-toggles {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sw-toggle-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sw-toggle-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.sw-toggle-btn.active {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.28);
+}
+
+/* ── Table Container & Styles ──────────────────────────────────────────── */
+.sw-table-container {
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.sw-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 12px;
+}
+
+.sw-table th {
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  padding: 11px 8px;
+  border: 1px solid #e2e8f0;
+  line-height: 1.3;
+}
+
+.sw-table td {
+  padding: 10px 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 12.5px;
+  color: #1e293b;
+  font-weight: 500;
+  transition: background 0.1s ease;
+}
+
+.sw-table tr:hover td {
+  background: #f8fafc;
+}
+
+/* Month Cell with Pill Badge */
+.sw-table .sw-td-month-cell {
+  background: #ffffff;
+  text-align: center;
+  padding: 8px 6px;
+}
+
+.sw-month-pill {
+  background: #ede9fe;
+  color: #6366f1;
+  border-radius: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+  letter-spacing: 0.2px;
+}
+
+.sw-table tr.sw-row-selected td {
+  background: #eff6ff !important;
+  font-weight: 700;
+}
+
+.sw-table tr.sw-row-total td {
+  background: #ffffff;
+  font-weight: 700;
+  border-top: 2px solid #cbd5e1;
+  color: #1e293b;
+  font-size: 13px;
+}
+
+.sw-table tr.sw-row-total .sw-td-total-label {
+  color: #1e293b;
+  font-weight: 800;
+}
+
+/* ── Chart Container & Legend ──────────────────────────────────────────── */
+.sw-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sw-chart-canvas {
+  width: 100%;
+  height: 330px;
+}
+
+.sw-chart-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.sw-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11.5px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.sw-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Responsive Breakpoints ────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .sw-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .sw-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sw-dashboard {
+    padding: 14px;
+  }
+
+  .sw-top-brand-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sw-brand-right {
+    width: 100%;
+  }
+
+  .sw-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sw-sub-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .sw-sub-right {
+    width: 100%;
+  }
+
+  .sw-month-select {
+    width: 100%;
+  }
+}
