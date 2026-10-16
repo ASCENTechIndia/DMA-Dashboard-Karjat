@@ -1,0 +1,618 @@
+/* ==========================================================================
+   DMA Dashboard - shared styles
+   Color tokens are pulled directly from the approved dashboard design.
+   Keep all colors as CSS variables so a future theme change is a one-file
+   edit instead of a find-and-replace across every component.
+   ========================================================================== */
+
+:root {
+  /* brand / navy (header bar, table headers, total rows) */
+  --dma-navy: #102a6b;
+  --dma-navy-dark: #0b1f52;
+
+  /* base surfaces */
+  --dma-bg: #eef1f8;
+  --dma-card-bg: #ffffff;
+  --dma-border: #e3e7f0;
+
+  /* text */
+  --dma-text: #1e2939;
+  --dma-text-muted: #64748b;
+
+  /* accent palette (mirrors the source design) */
+  --dma-blue: #2f6fed;
+  --dma-blue-light: #e8f0ff;
+
+  --dma-green: #1fa854;
+  --dma-green-light: #e6f7ec;
+
+  --dma-orange: #f5891f;
+  --dma-orange-light: #fef0e2;
+
+  --dma-red: #e6453c;
+  --dma-red-light: #fdeceb;
+
+  --dma-purple: #7c5cf0;
+  --dma-purple-light: #f0ecfe;
+
+  --dma-radius: 14px;
+  --dma-shadow: 0 2px 10px rgba(16, 42, 107, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dma-dashboard {
+  background: var(--dma-bg);
+  min-height: 100vh;
+  padding: 20px;
+   font-family:
+    "Poppins",
+    "Inter",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
+  color: var(--dma-text);
+}
+
+.dma-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.dma-row {
+  display: grid;
+  gap: 20px;
+}
+
+.dma-row-1-2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.dma-row-14-1 {
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.dma-row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* ---- generic card -------------------------------------------------- */
+.dma-card {
+  background: var(--dma-card-bg);
+  border-radius: var(--dma-radius);
+  box-shadow: var(--dma-shadow);
+  border: 1px solid var(--dma-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dma-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px 12px;
+}
+
+.dma-card-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dma-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dma-navy-dark);
+  margin: 0;
+}
+
+.dma-card-body {
+  padding: 0 20px 20px;
+  flex: 1;
+}
+
+.dma-card-body--split {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.dma-card-body--split>* {
+  flex: 1;
+  min-width: 180px;
+}
+
+/* ---- header ---------------------------------------------------------- */
+.dma-header {
+  background: var(--dma-card-bg);
+  border-radius: var(--dma-radius);
+  box-shadow: var(--dma-shadow);
+  border: 1px solid var(--dma-border);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dma-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.dma-header-logo-img {
+  margin-left: 50px;
+  padding-right: 50px;
+}
+
+.dma-header-org-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dma-text-muted);
+  white-space: nowrap;
+}
+
+.dma-header-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--dma-navy);
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin: 0;
+  flex: 1;
+}
+
+.dma-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dma-header-brand-text {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--dma-red);
+}
+
+/* ---- KPI summary cards ------------------------------------------------ */
+.dma-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dma-stat-card {
+  background: var(--dma-card-bg);
+  border-radius: var(--dma-radius);
+  box-shadow: var(--dma-shadow);
+  border: 1px solid var(--dma-border);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dma-stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dma-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.dma-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--dma-text);
+  margin: 0 0 2px;
+}
+
+.dma-stat-sub {
+  font-size: 12px;
+  color: var(--dma-text-muted);
+  margin: 0;
+}
+
+/* ---- tables ------------------------------------------------------------ */
+.dma-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.dma-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--dma-navy);
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 12px;
+  white-space: nowrap;
+}
+
+.dma-table thead th.dma-text-right,
+.dma-table td.dma-text-right {
+  text-align: right;
+}
+
+.dma-table tbody td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--dma-border);
+  color: var(--dma-text);
+}
+
+.dma-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.dma-table tfoot td {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background: var(--dma-navy);
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 12px;
+}
+
+.dma-table-scroll {
+  overflow-x: auto;
+}
+
+/* progress bar used inside the Collection % table */
+.dma-progress-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 160px;
+}
+
+.dma-progress-track {
+  flex: 1;
+  height: 8px;
+  border-radius: 6px;
+  background: #e7eaf2;
+  overflow: hidden;
+}
+
+.dma-progress-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: var(--dma-green);
+}
+
+.dma-progress-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dma-text);
+  width: 48px;
+  text-align: right;
+}
+
+/* ---- chart containers --------------------------------------------------- */
+.echart-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.echart-scroll-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.echart-scroll-wrapper::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+}
+.echart-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+.echart-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+.echart-container {
+  width: 100%;
+  height: 320px;
+}
+
+.echart-container--sm {
+  height: 240px;
+}
+
+.echart-container--donut {
+  height: 260px;
+}
+
+/* ---- mode / legend list (Payment Mode Analysis, donut legends) ---------- */
+.dma-legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.dma-legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.dma-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.dma-legend-label {
+  font-weight: 700;
+  color: var(--dma-text);
+}
+
+.dma-legend-sub {
+  color: var(--dma-text-muted);
+  font-size: 12.5px;
+}
+
+/* ---- horizontal ranking bars (Top Performing / Collection Ranking) ------ */
+.dma-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dma-bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 70px;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.dma-bar-name {
+  /* font-size: 13px; */
+  font-weight: 600;
+  color: var(--dma-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dma-bar-track {
+  height: 16px;
+  border-radius: 8px;
+  background: #eef1f8;
+  overflow: hidden;
+}
+
+.dma-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+}
+
+.dma-bar-value {
+  font-weight: 700;
+  text-align: right;
+  font-size: 13px;
+}
+
+/* ---- footer -------------------------------------------------------------- */
+.dma-footer {
+  background: var(--dma-navy);
+  color: #fff;
+  border-radius: var(--dma-radius);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dma-footer-note strong {
+  font-weight: 700;
+}
+
+.dma-footer-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ── Responsive ────────────────────────────────────────────────── */
+
+/* ≤ 1200px */
+@media (max-width: 1200px) {
+  .dma-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ≤ 1100px */
+@media (max-width: 1100px) {
+  .dma-row-1-2,
+  .dma-row-14-1,
+  .dma-row-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ≤ 768px – tablet */
+@media (max-width: 768px) {
+  .dma-dashboard {
+    padding: 12px;
+  }
+
+  .dma-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .dma-header {
+    flex-direction: row;
+    text-align: center;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .dma-header-title {
+    font-size: 18px;
+  }
+
+  .dma-header-logo-img {
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  .dma-stat-card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .dma-stat-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .dma-stat-value {
+    font-size: 22px;
+  }
+
+  .dma-card-body--split {
+    flex-direction: column;
+  }
+
+  .dma-card-body--split > * {
+    flex: none;
+  }
+
+  .dma-bar-row {
+    grid-template-columns: 90px 1fr 56px;
+    font-size: 12px;
+  }
+
+  .echart-container {
+    height: 300px;
+  }
+
+  .echart-container--donut {
+    height: 220px;
+  }
+
+  .dma-footer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 10px 16px;
+    font-size: 11.5px;
+  }
+
+  .dma-footer-date {
+    white-space: normal;
+    justify-content: center;
+  }
+}
+
+/* ≤ 480px – large phone */
+@media (max-width: 480px) {
+  .dma-dashboard {
+    padding: 8px;
+  }
+
+  .dma-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Header stays in ONE horizontal row – do not stack */
+  .dma-header {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .dma-header-title {
+    font-size: 15px;
+  }
+
+  .dma-header-org-name {
+    display: none;
+  }
+
+  .dma-stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .dma-stat-value {
+    font-size: 20px;
+  }
+
+  .dma-stat-label {
+    font-size: 10px;
+  }
+
+  .dma-bar-row {
+    grid-template-columns: 76px 1fr 48px;
+    font-size: 11px;
+  }
+
+  .dma-bar-track {
+    height: 12px;
+  }
+
+  .dma-grid,
+  .dma-row {
+    gap: 8px;
+  }
+
+  .dma-card-title {
+    font-size: 13px;
+  }
+
+  .echart-container {
+    height: 280px;
+  }
+}
+
+/* ≤ 360px – small phone */
+@media (max-width: 360px) {
+  .dma-bar-row {
+    grid-template-columns: 64px 1fr 42px;
+    font-size: 10px;
+  }
+
+  .dma-stat-value {
+    font-size: 18px;
+  }
+}
